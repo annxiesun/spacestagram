@@ -48,7 +48,7 @@ export default function Post ({ apod }) {
       <button onClick={() => setLike((prev) => (!prev))}>Like</button>
       <button onClick={() => setShowLink((prev) => (!prev))}>Link</button>
       {like && <p>Liked!</p>}
-      {showLink && <a href={window.location.href + 'photo?date='+ date}>{window.location.href + 'photo?date='+ date }</a>}
+      {showLink && <a href={window.location.origin + '/photo?date='+ date}>{window.location.origin + '/photo?date='+ date }</a>}
     </div>
   )
 }

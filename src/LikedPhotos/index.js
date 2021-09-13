@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Post from "../Post";
 import { getSingle } from '../utils/getPhotos';
+import moment from "moment";
 
 export default function LikedPhotos() {
   const [saved, setSaved] = useState([]);
@@ -16,7 +17,18 @@ export default function LikedPhotos() {
     });
 
     Promise.all(requests).then((newSaved) => {
-      console.log('hi', newSaved);
+      console.log(newSaved);
+      const hi = newSaved.sort((apod1, apod2) => {
+        const date1 = moment(apod1.date, 'YYYY-MM-DD');
+        const date2 = moment(apod2.date, 'YYYY-MM-DD');
+        if (date1.isBefore(date2)) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+
+      console.log(newSaved);
       setSaved(newSaved);
     })
   }
