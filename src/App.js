@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from './Context';
+import Feed from './Feed';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import PhotoDisplay from './PhotoDisplay';
+import LikedPhotos from './LikedPhotos';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Provider>
+        <Switch>
+          <Route path="/liked">
+            <LikedPhotos />
+          </Route>
+          <Route path="/photo">
+            <PhotoDisplay />
+          </Route>
+          <Route path="/">
+            <Feed />
+          </Route>
+        </Switch>
+      </Provider>
+    </Router>
   );
 }
 
