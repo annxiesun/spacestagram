@@ -34,9 +34,10 @@ function Feed() {
       }
     })
       .then((res) => {
-        const apod = res.data.reverse();
-        const newFeed = [...feed, ...apod];
-        console.log(apod)
+        const apodArr = res.data.reverse();
+        apodArr.filter((apod) => apod.media_type === 'image'); // remove videos
+        const newFeed = [...feed, ...apodArr];
+        console.log(apodArr)
         setFeed(newFeed);
         setStartDate((start) => prevDays(start, interval + 1));
         setEndDate((end) => prevDays(end, interval + 1));
