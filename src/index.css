@@ -1,0 +1,9 @@
+h1, h2, h3, p {
+  font-family: Nunito Sans;
+  font-weight: 400;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 18px;
+}

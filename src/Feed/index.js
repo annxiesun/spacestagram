@@ -4,9 +4,10 @@ import React, { useEffect, useState } from 'react';
 import { formatDate, prevDays } from '../utils/date';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Post from '../Post';
+import styles from './style.module.css';
 
 function Feed() {
-  const interval = 5;
+  const interval = 1;
 
   const [startDate, setStartDate] = useState(prevDays(Date.now(), interval));
   const [endDate, setEndDate] = useState(Date.now());
@@ -36,8 +37,7 @@ function Feed() {
       .then((res) => {
         const apodArr = res.data.reverse();
         apodArr.filter((apod) => apod.media_type === 'image'); // remove videos
-        const newFeed = [...feed, ...apodArr];
-        console.log(apodArr)
+        const newFeed = [...feed, ...apodArr.filter((apod) => apod.media_type === 'image')];
         setFeed(newFeed);
         setStartDate((start) => prevDays(start, interval + 1));
         setEndDate((end) => prevDays(end, interval + 1));
@@ -63,6 +63,7 @@ function Feed() {
         next={fetchMoreData}
         hasMore={true}
         loader={<h4>Loading...</h4>}
+        className={styles.feedContainer}
       >
         {feed.map((apod) => (
           <Post apod={apod} />
