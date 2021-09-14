@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {
-  Link,
   useLocation
 } from "react-router-dom";
-import Post
-  from "../Post";
-import axios from "axios";
 import { getSingle } from '../utils/getPhotos';
+import Display from "./Display";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -28,9 +25,14 @@ export default function PhotoDisplay() {
     getPhoto(query.get('date'));
   }, [])
   
+  
   return (
     <>
-      {(apod !== undefined && apod !== null) && <Post apod={apod} />}
+      {(apod !== undefined && apod !== null) && 
+        <div>
+          <Display apod={apod}/>
+        </div>
+      }
     </>
   );
 }
