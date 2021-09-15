@@ -1,9 +1,4 @@
 import React, { useEffect, useState } from "react";
-import {
-  Link,
-  useLocation
-} from "react-router-dom";
-import { getSingle } from '../utils/getPhotos';
 import styles from './style.module.css';
 import LikeButton from "../LikeButton";
 
@@ -21,13 +16,15 @@ export default function Display({ apod }) {
 
   return (
     <div>
-      <div className={styles.image}>
-        <img src={url} />
-      </div>
+      <img src={url} className={styles.image}/>
       <div className={styles.content}>
         <div>
           {title}
-          <LikeButton date={date}/>
+          <LikeButton date={date} />
+        </div>
+        <div>
+          Share this photo!
+          {window.location.origin + '/photo?date=' + date}
         </div>
       </div>
     </div>

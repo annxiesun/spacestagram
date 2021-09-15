@@ -7,10 +7,12 @@ import {
 } from "react-router-dom";
 import PhotoDisplay from './PhotoDisplay';
 import LikedPhotos from './LikedPhotos';
+import Topbar from './Topbar';
 
 function App() {
   return (
     <Router>
+      <Topbar />
       <Provider>
         <Switch>
           <Route path="/liked">

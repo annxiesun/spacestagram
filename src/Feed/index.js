@@ -5,6 +5,7 @@ import { formatDate, prevDays } from '../utils/date';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Post from '../Post';
 import styles from './style.module.css';
+import Spinner from '../Spinner';
 
 function Feed() {
   const interval = 1;
@@ -62,7 +63,7 @@ function Feed() {
         dataLength={feed.length}
         next={fetchMoreData}
         hasMore={true}
-        loader={<h4>Loading...</h4>}
+        loader={<Spinner />}
         className={styles.feedContainer}
       >
         {feed.map((apod) => (

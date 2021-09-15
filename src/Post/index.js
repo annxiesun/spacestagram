@@ -14,8 +14,6 @@ export default function Post({ apod }) {
     url
   } = apod;
 
-  const [showLink, setShowLink] = useState(false);
-
   const formatExplanation = (str) => {
     return str.substring(0, 80) + '...';
   }
@@ -27,7 +25,6 @@ export default function Post({ apod }) {
         <div className={styles.content}>
           <h3>{title}</h3>
           <p>{formatExplanation(explanation)}</p>
-          {showLink && <a href={window.location.origin + '/photo?date=' + date}>{window.location.origin + '/photo?date=' + date}</a>}
         </div>
         <img src={url} className={styles.image} />
       </div>

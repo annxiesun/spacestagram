@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './style.module.css';
 import HeartEmpty from '../Icons/HeartEmpty';
 import HeartFilled from '../Icons/HeartFilled';
+import Zoom from 'react-reveal/Zoom';
 
 export default function LikeButton({ className, date }) {
   const [like, setLike] = useState(false);
@@ -34,7 +35,12 @@ export default function LikeButton({ className, date }) {
 
   return (
     <button className={`${styles.likeButton} ${className}`} onClick={() => setLike((prev) => (!prev))}>
-      {like ? <HeartFilled className={styles.icon} /> : <HeartEmpty className={styles.icon} />}
+      <Zoom when={like} duration={100} unmountOnExit mountOnEnter exit={false}>
+        <HeartFilled className={styles.icon} />
+      </Zoom>
+      <Zoom when={!like} duration={100} unmountOnExit mountOnEnter exit={false}>
+        <HeartEmpty className={styles.icon} />
+      </Zoom>
     </button>
   )
 }
