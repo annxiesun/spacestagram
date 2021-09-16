@@ -1,7 +1,7 @@
 import useStateContext from '../Context';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { formatDate, prevDays } from '../utils/date';
+import { formatDate, prevDays, generateDateArr } from '../utils/date';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Post from '../Post';
 import styles from './style.module.css';
@@ -27,6 +27,32 @@ function Feed() {
     url
   }
   */
+  const cacheAPOD = (startDate, endDate) => {
+    console.log(generateDateArr(startDate, endDate));
+    /*
+    const cache = localStorage.getItem('cache');
+    postMap = new Map(JSON.parse(cache));
+    if (postMap.get(apod.date)) {
+      return;
+    } else {
+      postMap.set(apod.date, apod);
+      localStorage.setItem('cache', JSON.stringify([...postMap]));
+    }*/
+  }
+
+  /*
+  const getCache = (dateArr) => {
+    const cache = localStorage.getItem('cache');
+    postMap = new Map(JSON.parse(cache));
+    dateArr.forEach((date) => {
+      if (postMap.has(date)) {
+        return postMap.has(date);
+      } else {
+        cacheAPOD()
+      }
+    });
+  }*/
+
   const getAPOD = async (startDate, endDate) => {
     console.log(startDate, endDate)
     await axios.get('https://api.nasa.gov/planetary/apod?api_key=s6qLszKpWb7eYpwtP6TFQZAnerodCr2KqDxqWyIS', {
@@ -49,6 +75,7 @@ function Feed() {
   }
 
   useEffect(() => {
+    console.log(cacheAPOD(startDate, endDate));
     getAPOD(startDate, endDate);
   }, []);
 

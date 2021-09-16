@@ -1,8 +1,8 @@
 import React from "react";
 import styles from './style.module.css';
 
-export default function Spinner() {
+export default function Spinner({ className }) {
   return (
-    <div class={styles.ldsRing}><div></div><div></div><div></div><div></div></div>
+    <div className={`${styles.ldsRing} ${className}`}><div></div><div></div><div></div><div></div></div>
   )
 }

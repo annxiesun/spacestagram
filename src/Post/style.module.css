@@ -1,5 +1,5 @@
 .container {
-  width: 400px;
+  width: 450px;
   position: relative;
   margin-bottom: 50px;
 }
@@ -27,6 +27,9 @@
   z-index: 2;
   color: white;
   padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .gradientOverlay {
@@ -47,4 +50,24 @@
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.fullscreen {
+  fill: white;
+  height: 24px;
+  width: 24px;
+}
+
+.textContent {
+  width: 85%;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.date {
+  margin-bottom: 8px;
 }

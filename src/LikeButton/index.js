@@ -35,10 +35,10 @@ export default function LikeButton({ className, date }) {
 
   return (
     <button className={`${styles.likeButton} ${className}`} onClick={() => setLike((prev) => (!prev))}>
-      <Zoom when={like} duration={100} unmountOnExit mountOnEnter exit={false}>
+      <Zoom opposite when={like} duration={50} unmountOnExit mountOnEnter exit={false}>
         <HeartFilled className={styles.icon} />
       </Zoom>
-      <Zoom when={!like} duration={100} unmountOnExit mountOnEnter exit={false}>
+      <Zoom opposite when={true} duration={50} unmountOnExit mountOnEnter exit={false}>
         <HeartEmpty className={styles.icon} />
       </Zoom>
     </button>

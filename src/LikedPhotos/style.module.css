@@ -1,0 +1,10 @@
+.feedContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-behavior: none;
+  height: fit-content !important;
+  overflow: initial !important;
+  margin-top: 32px;
+}

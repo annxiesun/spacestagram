@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import Post from "../Post";
 import { getSingle } from '../utils/getPhotos';
 import moment from "moment";
+import styles from './style.module.css';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Spinner from "../Spinner";
 
 export default function LikedPhotos() {
   const [saved, setSaved] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getPhotos = async (dates) => {
     const requests = dates.map((date) => {
@@ -43,10 +47,11 @@ export default function LikedPhotos() {
   }, []);
 
   return (
-    <>
+    <div
+    className={styles.feedContainer}>
       {saved.map((apod) => (
         <Post key={apod.title} apod={apod} />
       ))}
-    </>
+    </div>
   );
 }
