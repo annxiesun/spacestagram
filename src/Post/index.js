@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './style.module.css';
 import LikeButton from '../LikeButton';
 import Fade from 'react-reveal/Fade';
 import Fullscreen from '../Icons/Fullscreen';
-import { Link } from 'react-router-dom';
 import Display from '../PhotoDisplay/Display';
-import Zoom from 'react-reveal/Zoom';
 
 export default function Post({ apod }) {
   const {
-    copyright,
     date,
     explanation,
-    hdurl,
-    media_type,
-    service_version,
     title,
     url
   } = apod;
@@ -53,9 +48,13 @@ export default function Post({ apod }) {
               <Fullscreen className={styles.fullscreen} />
             </button>
           </div>
-          <img src={url} className={styles.image} />
+          <img alt={title} src={url} className={styles.image} />
         </div>
       </Fade>
     </>
   )
+}
+
+Post.propTypes = {
+  apod: PropTypes.object.isRequired,
 }

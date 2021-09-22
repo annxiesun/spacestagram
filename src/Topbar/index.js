@@ -10,7 +10,7 @@ export default function Topbar() {
   return (
     <div className={styles.topbar}>
       <Link to="/" className={styles.left}>
-        <img className={styles.logo} src={'/spacestagram_logo.svg'} />
+        <img alt="logo" className={styles.logo} src={'/spacestagram_logo.svg'} />
         <h2 className={styles.title}>Spacestagram</h2>
       </Link>
       <div>

@@ -5,7 +5,6 @@ import {
 import { getSingle } from '../utils/getPhotos';
 import Display from "./Display";
 import Spinner from "../Spinner";
-import styles from './style.module.css';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -17,7 +16,7 @@ export default function PhotoDisplay() {
   const [loading, setLoading] = useState(true);
 
   const getPhoto = async (date) => {
-    const apod = await getSingle(date)
+    await getSingle(date)
     .then((apod) =>  { 
       setAPOD(apod);
       setLoading(false);
@@ -35,7 +34,7 @@ export default function PhotoDisplay() {
       {loading && <Spinner className={StyleSheet.spinner}/>}
       {(apod !== undefined && apod !== null) && 
         <div>
-          <Display apod={apod}/>
+          <Display apod={apod} closeDisplay/>
         </div>
       }
     </>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import styles from './style.module.css';
 import HeartEmpty from '../Icons/HeartEmpty';
 import HeartFilled from '../Icons/HeartFilled';
@@ -43,4 +44,9 @@ export default function LikeButton({ className, date }) {
       </Zoom>
     </button>
   )
+}
+
+LikeButton.propTypes = {
+  className: PropTypes.object.isRequired,
+  date: PropTypes.string.isRequired
 }

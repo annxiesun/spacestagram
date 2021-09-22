@@ -3,7 +3,6 @@ import Post from "../Post";
 import { getSingle } from '../utils/getPhotos';
 import moment from "moment";
 import styles from './style.module.css';
-import InfiniteScroll from 'react-infinite-scroll-component';
 import Spinner from "../Spinner";
 
 export default function LikedPhotos() {
@@ -14,15 +13,13 @@ export default function LikedPhotos() {
     const requests = dates.map((date) => {
       return getSingle(date)
       .then((apod) =>  { 
-        console.log(apod)
         return apod;
       })
       .catch((err) => console.log(err));
     });
 
     Promise.all(requests).then((newSaved) => {
-      console.log(newSaved);
-      const hi = newSaved.sort((apod1, apod2) => {
+      newSaved.sort((apod1, apod2) => {
         const date1 = moment(apod1.date, 'YYYY-MM-DD');
         const date2 = moment(apod2.date, 'YYYY-MM-DD');
         if (date1.isBefore(date2)) {
@@ -31,8 +28,7 @@ export default function LikedPhotos() {
           return -1;
         }
       });
-
-      console.log(newSaved);
+      setLoading(false);
       setSaved(newSaved);
     })
   }
@@ -52,6 +48,7 @@ export default function LikedPhotos() {
       {saved.map((apod) => (
         <Post key={apod.title} apod={apod} />
       ))}
+      {loading && <Spinner />}
     </div>
   );
 }

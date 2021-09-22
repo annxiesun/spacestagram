@@ -1,4 +1,4 @@
-import { Provider } from './Context';
+import React from "react";
 import Feed from './Feed';
 import {
   BrowserRouter as Router,
@@ -13,7 +13,6 @@ function App() {
   return (
     <Router>
       <Topbar />
-      <Provider>
         <Switch>
           <Route path="/liked">
             <LikedPhotos />
@@ -25,7 +24,6 @@ function App() {
             <Feed />
           </Route>
         </Switch>
-      </Provider>
     </Router>
   );
 }

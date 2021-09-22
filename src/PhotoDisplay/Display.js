@@ -8,12 +8,8 @@ import Close from "../Icons/Close";
 
 export default function Display({ apod, closeDisplay }) {
   const {
-    copyright,
     date,
     explanation,
-    hdurl,
-    media_type,
-    service_version,
     title,
     url
   } = apod;
@@ -32,9 +28,10 @@ export default function Display({ apod, closeDisplay }) {
   return (
     <Fade bottom duration={100} distance="50px">
       <div className={styles.page}>
+        {closeDisplay !== null && 
         <button className={styles.iconButton} onClick={() => closeDisplay()}>
           <Close className={styles.closeIcon} />
-        </button>
+        </button>}
         <Fade in={copied} duration={200} distance="10px" bottom>
           <div className={styles.linkCopied}>
             <p>Copied Link!</p>
@@ -42,7 +39,7 @@ export default function Display({ apod, closeDisplay }) {
         </Fade>
         <div className={styles.container}>
           <div className={styles.imageContainer}>
-            <img src={url} className={styles.image} />
+            <img alt={title} src={url} className={styles.image} />
           </div>
           <div className={styles.content}>
             <div className={styles.titleBox}>
