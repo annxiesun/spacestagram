@@ -9,6 +9,7 @@ run locally using
 # Tech Stack
 - React
 - JavaScript
+- Node
 - CSS Modules (for styling)
 - HTML
 - Axios (for API requests)
