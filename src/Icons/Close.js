@@ -8,5 +8,5 @@ export default function Close({ className }) {
 }
 
 Close.propTypes = {
-  className: PropTypes.object.isRequired
+  className: PropTypes.string.isRequired
 }

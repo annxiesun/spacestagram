@@ -10,5 +10,9 @@ export default function Spinner({ className }) {
 
 
 Spinner.propTypes = {
-  className: PropTypes.object.isRequired
+  className: PropTypes.string
+}
+
+Spinner.defaultProps = {
+  className: ''
 }

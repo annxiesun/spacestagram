@@ -47,6 +47,6 @@ export default function LikeButton({ className, date }) {
 }
 
 LikeButton.propTypes = {
-  className: PropTypes.object.isRequired,
+  className: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired
 }

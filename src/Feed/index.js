@@ -7,7 +7,7 @@ import Spinner from '../Spinner';
 import { getPhotoRange } from '../utils/getPhotos';
 
 function Feed() {
-  const interval = 1;
+  const interval = 2;
 
   const [startDate, setStartDate] = useState(prevDays(Date.now(), interval));
   const [endDate, setEndDate] = useState(Date.now());
@@ -40,7 +40,7 @@ function Feed() {
         className={styles.feedContainer}
       >
         {feed.map((apod) => (
-          <Post apod={apod} key={apod.name}/>
+          <Post apod={apod} key={apod.title}/>
         ))}
       </InfiniteScroll>
     </>

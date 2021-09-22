@@ -8,5 +8,5 @@ export default function HeartEmpty({ className }) {
 }
 
 HeartEmpty.propTypes = {
-  className: PropTypes.object.isRequired
+  className: PropTypes.string.isRequired
 }

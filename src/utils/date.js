@@ -14,7 +14,6 @@ export function generateDateArr(start, end) {
   while (!moment(start).isSame(end)) {
     arr.push(start)
     moment(start).add(1, 'days');
-    console.log(start, end)
     hi += 1;
     if (hi > 10) {
       break;

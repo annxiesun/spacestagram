@@ -8,5 +8,5 @@ export default function Fullscreen ({ className }) {
 }
 
 Fullscreen.propTypes = {
-  className: PropTypes.object.isRequired
+  className: PropTypes.string.isRequired
 }

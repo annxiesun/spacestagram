@@ -8,5 +8,5 @@ export default function Link({ className }) {
 }
 
 Link.propTypes = {
-  className: PropTypes.object.isRequired
+  className: PropTypes.string.isRequired
 }

@@ -8,5 +8,5 @@ export default function Home({ className }) {
 }
 
 Home.propTypes = {
-  className: PropTypes.object.isRequired
+  className: PropTypes.string.isRequired
 }

@@ -18,7 +18,6 @@ export async function getSingle(date) {
 }
 
 export async function getPhotoRange (startDate, endDate) {
-  console.log(process.env)
   let apodArr;
   await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}`, {
     params: {
