@@ -31,3 +31,20 @@
   text-decoration: none !important;
   color: black;
 }
+
+.popover {
+  background-color: #2e2d2e;
+  color: white;
+  width: fit-content;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+
+.likeContainer {
+  position: relative;
+}

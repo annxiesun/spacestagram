@@ -10,3 +10,17 @@
   padding: 16px;
   box-sizing: border-box;
 }
+
+
+.graphicContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.spaceshipGraphic {
+  width: 100px;
+  height: auto;
+}

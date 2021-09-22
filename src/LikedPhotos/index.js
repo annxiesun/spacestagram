@@ -45,9 +45,18 @@ export default function LikedPhotos() {
   return (
     <div
     className={styles.feedContainer}>
+      {saved.length === 0 ? 
+      <div className={styles.graphicContainer}>
+        <img src="/spaceship.svg" className={styles.spaceshipGraphic}/>
+        <p>{`You don't have any Liked Photos!`}</p>
+      </div>
+      :
+      <>
       {saved.map((apod) => (
         <Post key={apod.title} apod={apod} />
       ))}
+      </>
+      }
       {loading && <Spinner />}
     </div>
   );
