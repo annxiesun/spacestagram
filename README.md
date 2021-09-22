@@ -30,7 +30,7 @@ run locally using
 **Unique UI**
 - Because of the long descriptions for each photo, I created a UI that shows preview for each photo to be first and then the user can choose to see full descriptions of photos they are intrigued by 
 
-**Save Likes after Reload***
+**Save Likes after Reload**
 - I used local storage to keep track of the photos the user liked and I used a hash-map to store these values to optimize the system
 
 **Liked Photos**
