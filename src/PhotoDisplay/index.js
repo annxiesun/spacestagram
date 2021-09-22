@@ -28,13 +28,16 @@ export default function PhotoDisplay() {
     getPhoto(query.get('date'));
   }, [])
   
+  const openHome = () => {
+    window.location.href = "/";
+  }
   
   return (
     <>
       {loading && <Spinner className={StyleSheet.spinner}/>}
       {(apod !== undefined && apod !== null) && 
         <div>
-          <Display apod={apod} closeDisplay/>
+          <Display apod={apod} closeDisplay={openHome}/>
         </div>
       }
     </>

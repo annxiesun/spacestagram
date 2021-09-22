@@ -28,7 +28,7 @@ export default function Display({ apod, closeDisplay }) {
   return (
     <Fade bottom duration={100} distance="50px">
       <div className={styles.page}>
-        {closeDisplay !== null && 
+        {closeDisplay && 
         <button className={styles.iconButton} onClick={() => closeDisplay()}>
           <Close className={styles.closeIcon} />
         </button>}
