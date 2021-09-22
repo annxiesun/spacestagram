@@ -7,6 +7,8 @@
   background-color: white;
   display: flex;
   align-items: center;
+  overflow: scroll;
+  height: 100vh;
 }
 
 .imageContainer {
@@ -38,6 +40,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .likeContainer {
@@ -112,6 +115,7 @@
   }
   
   .content {
+    padding: 5%;
     width: 100%;
   }
 
@@ -120,6 +124,5 @@
     flex-direction: column;
     margin-top: 80px;
   }
-  
   
 }

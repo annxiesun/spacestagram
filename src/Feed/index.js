@@ -1,6 +1,5 @@
-import axios from 'axios';
-import React, { useEffect, useState, useCallback } from 'react';
-import { formatDate, prevDays, generateDateArr } from '../utils/date';
+import React, { useEffect, useState } from 'react';
+import { prevDays } from '../utils/date';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Post from '../Post';
 import styles from './style.module.css';

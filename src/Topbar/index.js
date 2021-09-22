@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import HeartEmpty from '../Icons/HeartEmpty';
 import Home from '../Icons/Home';
 import {

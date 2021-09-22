@@ -7,4 +7,6 @@
   height: fit-content !important;
   overflow: initial !important;
   margin-top: 32px;
+  padding: 16px;
+  box-sizing: border-box;
 }
